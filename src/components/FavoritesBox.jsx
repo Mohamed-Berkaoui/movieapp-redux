@@ -1,9 +1,9 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router";
-import { addToFavoritesAction } from "../redux/favorites/actions";
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { removeFromFavorites } from '../redux/favorites/actions'
+import { Link } from 'react-router'
 
-function MovieBox({ movie }) {
+function FavoritesBox({movie}) {
     const dispatch=useDispatch()
   return (
     <div className="movie-box">
@@ -30,9 +30,9 @@ function MovieBox({ movie }) {
         </div>
         {movie.awards && <p className="movie-awards">{movie.awards}</p>}
       </div>
-      <button className="btn-favorite" onClick={()=>dispatch(addToFavoritesAction(movie))}>♥ Add to Favourites</button>
+      <button className="btn-favorite" onClick={()=>dispatch(removeFromFavorites(movie))}>♥ Remove from Favourites</button>
     </div>
-  );
+  )
 }
 
-export default MovieBox;
+export default FavoritesBox

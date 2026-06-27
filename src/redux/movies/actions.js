@@ -13,9 +13,9 @@ export const getMoviesLoadingAction = function () {
 export const fetchMovies = function () {
   return function (dispatch) {
     dispatch(getMoviesLoadingAction());
-    fetch("http://localhost:3000/movies")
+    fetch("https://fooapi.com/api/movies")
       .then((res) => res.json())
-      .then((data) => dispatch(getMoviesSuccessAction(data)))
+      .then((data) => dispatch(getMoviesSuccessAction(data.data)))
       .catch((e) => dispatch(getMoviesErrorAction(error)));
   };
 };

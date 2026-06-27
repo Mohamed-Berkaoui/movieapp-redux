@@ -5,12 +5,9 @@ import { useParams, useNavigate } from 'react-router'
 function MovieDetails() {
     const {id}=useParams()
     const navigate=useNavigate()
-    const movies=useSelector(state=>state.data)
-
+    const movies=useSelector(state=>state.movies.data)
     if (!movies) return <div className='loading'><h4>Loading...</h4></div>
-
     const movie=movies.find(mov=>mov.id==id)
-
     if (!movie) return <div className='loading'><h4>Movie not found.</h4></div>
 
   return (

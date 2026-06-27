@@ -83,11 +83,96 @@ a:hover {
   color: #a78bfa;
 }
 
+/* ── Filter bar ── */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  max-width: 1280px;
+  margin: 1.75rem auto 0;
+  padding: 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-search {
+  position: relative;
+  flex: 1;
+  min-width: 200px;
+}
+
+.filter-icon {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  pointer-events: none;
+}
+
+.filter-input {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.4rem;
+  background: #1a1d27;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.filter-input::placeholder { color: #475569; }
+.filter-input:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+}
+
+.filter-select {
+  padding: 0.6rem 2rem 0.6rem 0.9rem;
+  background: #1a1d27;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #e2e8f0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.filter-select:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.12);
+}
+.filter-select option { background: #1a1d27; }
+
+.filter-btn {
+  padding: 0.6rem 1.4rem;
+  background: #a78bfa;
+  color: #0f1117;
+  border: none;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.filter-btn:hover {
+  background: #c4b5fd;
+  transform: translateY(-1px);
+}
+.filter-btn:active { transform: translateY(0); }
+
 /* ── Home page ── */
 .home-page {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+  margin: 1.5rem auto 0;
+  padding: 0 1.5rem 2.5rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
@@ -379,3 +464,11 @@ a:hover {
 ::-webkit-scrollbar-track { background: #0f1117; }
 ::-webkit-scrollbar-thumb { background: #2d3148; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #3d4460; }
+
+
+.favorites{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  padding: 30px;
+}

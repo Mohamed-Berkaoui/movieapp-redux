@@ -13,6 +13,7 @@ import { Route, Routes } from "react-router";
 import Home from "./pages/Home";
 import Favorits from "./pages/Favorits";
 import MovieDetails from "./pages/MovieDetails";
+import { ToastContainer } from "react-toastify";
 function App() {
   const dispatch = useDispatch();
   useEffect(function () {
@@ -20,6 +21,7 @@ function App() {
   }, []);
   return (
     <>
+    <ToastContainer/>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

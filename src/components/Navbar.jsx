@@ -1,17 +1,17 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router'
+import { NavLink } from 'react-router'
 
 function Navbar() {
-  const location = useLocation()
+
   return (
     <nav className='navbar'>
-      <Link to="/" className='navbar-logo'>🎬 MoviesApp</Link>
+      <NavLink to="/" className='navbar-logo'>🎬 MoviesApp</NavLink>
       <ul className='navbar-links'>
         <li>
-          <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <Link to="/favorits" className={location.pathname === '/favorits' ? 'active' : ''}>Favourites</Link>
+          <NavLink to="/favorits" >Favourites</NavLink>
         </li>
       </ul>
     </nav>
